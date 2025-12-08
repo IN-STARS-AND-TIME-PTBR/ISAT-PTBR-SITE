@@ -14,40 +14,42 @@
   --muted: #d9d9d9;
 }
 
-/* reset simples */
+/* Reset simples */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
+
 body{
   font-family: "VCR", monospace;
   color:var(--white);
   background-color:#000;
+
   /* BACKGROUND ESTÁTICO (embaixo) - SIFRIN LOOP (fixo) */
   background-image: url("assets/sifrin-loop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* CAMADA ANIMADA SOBRE O FUNDO ESTÁTICO
-   (usamos um elemento .overlay-animated para controlar a animação e a opacidade)
-*/
+/* CAMADA ANIMADA SOBRE O FUNDO ESTÁTICO */
 .overlay-animated{
   position:fixed;
   inset:0;
-  z-index:1; /* acima do fundo estático */
-  pointer-events:none; /* não atrapalha cliques */
+  z-index:1;
+  pointer-events:none;
+
   background-image: url("assets/bg.png");
   background-repeat: repeat;
   background-size: 300px 300px;
-  opacity: 0.45; /* transparência do layer animado */
+
+  opacity: 0.45;
   mix-blend-mode: normal;
   animation: bgScroll 18s linear infinite;
 }
 
-/* animação de deslocamento do padrão */
 @keyframes bgScroll {
   from{ background-position: 0 0; }
   to  { background-position: 300px 300px; }
@@ -56,14 +58,14 @@ body{
 /* Conteúdo central */
 .page{
   position:relative;
-  z-index:2; /* acima da overlay animada */
+  z-index:2;
   max-width: var(--max-width);
   margin: 40px auto;
   padding: 40px 20px;
   text-align:center;
 }
 
-/* TÍTULO (imagem) */
+/* TÍTULO */
 .title-img{
   display:block;
   margin: 0 auto 10px;
@@ -72,7 +74,7 @@ body{
   image-rendering: pixelated;
 }
 
-/* Pixel avatar entre título e boas vindas */
+/* PIXEL AVATAR */
 .pixel-avatar{
   width:160px;
   height:auto;
@@ -88,7 +90,7 @@ body{
   letter-spacing:2px;
 }
 
-/* Botões (com borda + efeito hover e click) */
+/* Botões */
 .buttons{
   display:flex;
   gap:18px;
@@ -105,12 +107,10 @@ body{
   border:2px solid rgba(255,255,255,0.9);
   letter-spacing:4px;
   transition: all 180ms ease;
-  position:relative;
   background:transparent;
   font-size:16px;
 }
 
-/* borda luminosa no hover + brilho */
 .btn:hover{
   transform:translateY(-3px);
   box-shadow: 0 6px 18px rgba(255,255,255,0.12), 0 0 18px rgba(255,255,255,0.14);
@@ -118,7 +118,6 @@ body{
   border-color:rgba(255,255,255,1);
 }
 
-/* efeito ao clicar (flash interno) */
 .btn:active{
   transform:translateY(0);
   box-shadow: 0 2px 6px rgba(255,255,255,0.08) inset;
@@ -138,7 +137,7 @@ body{
   margin-bottom:12px;
 }
 
-/* RODAPÉ ICONES (sem alteração de cor) */
+/* RODAPÉ ICONES */
 .icons{
   display:flex;
   justify-content:center;
@@ -154,21 +153,22 @@ body{
   transition: transform 160ms ease;
 }
 
-/* os ícones NÃO recebem filtros (mantém original) */
-.icons a:hover img{ transform:scale(1.05); }
+.icons a:hover img{
+  transform:scale(1.05);
+}
 
-/* SIFRIN MIUDO fixo canto inferior direito com "piscar de claridade" (brightness pulse) */
+/* SIFRIN MIUDO */
 .sifrin-miudo{
   position:fixed;
   right:22px;
   bottom:20px;
-  width:92px;         /* ajuste de tamanho */
-  height:auto;
-  z-index:3;          /* acima de tudo */
+  width:92px;
+  z-index:3;
   image-rendering:pixelated;
+
   filter: drop-shadow(0 3px 8px rgba(0,0,0,0.7));
   transition: transform 160ms ease;
-  /* animação de brilho — NÃO altera opacidade, apenas brilho */
+
   animation: sifrinPulse 1.8s ease-in-out infinite;
 }
 
@@ -186,11 +186,17 @@ body{
   .sifrin-miudo{ width:72px }
 }
 
-/* CURSOR PERSONALIZADO
-   (hotspot 8 8 - se necessário ajustar)
-*/
+/* CURSOR PERSONALIZADO */
 body, a, button {
   cursor: url("assets/cursor.png") 8 8, auto;
 }
 
-
+/* ============================
+   CORREÇÃO FINAL
+   REMOVER FUNDO BRANCO DO PIXELART
+============================ */
+.pixel-avatar{
+  mix-blend-mode: lighten;
+  background: transparent !important;
+  filter: brightness(1.35) contrast(120%);
+}
