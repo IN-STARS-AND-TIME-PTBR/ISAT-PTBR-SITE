@@ -17,14 +17,14 @@
    CURSOR PIXELADO
 =========================== */
 body, button, a {
-    cursor: url("assets/pixil-frame-0 (11).png") 0 0, auto;
+    cursor: url('assets/cursor.png') 0 0, auto;
 }
 
 /* ===========================
    FUNDO ANIMADO LOOP
 =========================== */
 body {
-    background: url("assets/Novo Projeto (4).png");
+    background: url('assets/bg.png');
     background-size: 300px;
     background-repeat: repeat;
     animation: scroll 15s linear infinite;
@@ -101,4 +101,5 @@ button:hover, .btn:hover {
     transform: scale(1.15);
     filter: brightness(1.4);
 }
+
 
