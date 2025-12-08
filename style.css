@@ -1,0 +1,104 @@
+/* ===========================
+   FONT — VCR OSD MONO
+=========================== */
+@font-face {
+    font-family: 'VCR';
+    src: url('VCR_OSD_MONO.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VCR', monospace;
+}
+
+/* ===========================
+   CURSOR PIXELADO
+=========================== */
+body, button, a {
+    cursor: url('cursor.png') 0 0, auto;
+}
+
+/* ===========================
+   FUNDO ANIMADO LOOP
+=========================== */
+body {
+    background: url('bg.png');
+    background-size: 300px;
+    background-repeat: repeat;
+    animation: scroll 15s linear infinite;
+    color: white;
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes scroll {
+    from { background-position: 0 0; }
+    to   { background-position: 300px 300px; }
+}
+
+/* Fade-in da página */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ===========================
+   CONTEÚDO CENTRAL
+=========================== */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 60px;
+}
+
+/* Título (imagem) */
+.title-img {
+    width: 90%;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+button, .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    letter-spacing: 4px;
+    transition: 0.3s ease;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* Hover com brilho */
+button:hover, .btn:hover {
+    box-shadow: 0 0 10px #fff, 0 0 20px #ccc;
+    filter: brightness(1.3);
+}
+
+/* ===========================
+   ICONES
+=========================== */
+.icons {
+    margin-top: 40px;
+}
+
+.icons img {
+    width: 55px;
+    margin: 0 10px;
+    transition: 0.2s;
+}
+
+.icons img:hover {
+    transform: scale(1.15);
+    filter: brightness(1.4);
+}
