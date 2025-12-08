@@ -1,80 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>In Stars And Time PT-BR</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>In Stars And Time PT-BR</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Cursor personalizado (backup caso o CSS falhe) -->
-    <style>
-        body {
-            cursor: url("assets/cursor.png"), auto;
-        }
-    </style>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+  <!-- ÁUDIO DE CLIQUE -->
+  <audio id="clickSound" src="0_oh.ogg" preload="auto"></audio>
 
-        <!-- LOGO -->
-        <img src="assets/logo.png" class="title-img" alt="Logo In Stars And Time">
+  <!-- CAMADA ANIMADA SOBRE O FUNDO ESTÁTICO -->
+  <div class="overlay-animated" aria-hidden="true"></div>
 
-        <!-- AVATAR (CANTO SUPERIOR DIREITO) -->
-        <img src="assets/pixelart.png" class="avatar" alt="Avatar Pixelart">
+  <main class="page">
+    <header class="top">
+      <!-- logo (imagem título) -->
+      <img src="assets/logo.png" alt="In Stars And Time PT-BR" class="title-img">
 
-        <!-- BOAS VINDAS -->
-        <p class="welcome">* Boas vindas, Stardust!</p>
+      <!-- pixel avatar (ENTRE o título e o texto "Boas vindas") -->
+      <img src="assets/pixelart.png" alt="Avatar" class="avatar pixel-avatar">
 
-        <!-- BOTÕES CENTRAIS -->
-        <div class="buttons">
-            <a href="#sobre" class="btn">SOBRE</a>
-            <a href="#reset" class="btn">START AGAIN</a>
-            <a href="#isat" class="btn">ISAT</a>
-        </div>
+      <!-- texto de boas vindas -->
+      <p class="welcome">* Boas vindas, Stardust!</p>
 
-        <!-- SEÇÃO SOBRE -->
-        <section id="sobre" style="margin-top: 80px;">
-            <h2>Sobre</h2>
-            <p>Informações sobre o projeto de tradução PT-BR.</p>
-        </section>
+      <!-- botões -->
+      <nav class="buttons">
+        <a class="btn" href="#sobre">SOBRE</a>
+        <a class="btn" href="#reset">START AGAIN</a>
+        <a class="btn" href="#isat">ISAT</a>
+      </nav>
+    </header>
 
-        <!-- SEÇÃO ISAT -->
-        <section id="isat" style="margin-top: 80px;">
-            <h2>ISAT</h2>
-            <p>Detalhes sobre o universo de In Stars And Time.</p>
-        </section>
+    <!-- conteúdo -->
+    <section id="sobre" class="section">
+      <h2>Sobre</h2>
+      <p>Informações sobre o projeto de tradução PT-BR.</p>
+    </section>
 
-        <!-- ÍCONES DE LINKS -->
-        <div class="icons">
-            <a href="#"><img src="assets/yt.png" alt="YouTube"></a>
-            <a href="#"><img src="assets/gh.png" alt="GitHub"></a>
-            <a href="#"><img src="assets/x.png" alt="Twitter/X"></a>
-            <a href="#"><img src="assets/dc.png" alt="Discord"></a>
-        </div>
+    <section id="isat" class="section">
+      <h2>ISAT</h2>
+      <p>Detalhes sobre o universo de In Stars And Time.</p>
+    </section>
 
-    </div>
+    <!-- ícones / redes -->
+    <footer class="icons">
+      <a href="https://www.youtube.com/@ISAT-PT-BR" target="_blank" rel="noopener" aria-label="YouTube">
+        <img src="assets/yt.png" alt="YouTube">
+      </a>
+      <a href="https://github.com/IN-STARS-AND-TIME-PTBR/IN-STARS-AND-TIME-EM-PTBR" target="_blank" rel="noopener" aria-label="GitHub">
+        <img src="assets/gh.png" alt="GitHub">
+      </a>
+      <a href="https://x.com/ISAT_PTBR" target="_blank" rel="noopener" aria-label="X">
+        <img src="assets/x.png" alt="X">
+      </a>
+      <a href="https://discord.gg/JNPGp3U59V" target="_blank" rel="noopener" aria-label="Discord">
+        <img src="assets/dc.png" alt="Discord">
+      </a>
+    </footer>
+  </main>
 
-    <!-- SIFRIN MIUDO PISCANDO -->
-    <img src="assets/sifrin-miudo.png" class="sifrin-miudo" alt="Sifrin Miudo">
+  <!-- Sifrin miudo piscando (fixo no canto inferior direito) -->
+  <img src="assets/sifrin-miudo.png" alt="Sifrin miudo" class="sifrin-miudo" id="sifrinMiudo">
 
-    <!-- ÁUDIO DE CLIQUE -->
-    <audio id="clickSound" src="assets/0_oh.ogg" preload="auto"></audio>
-
-    <!-- SCRIPT DO CLIQUE -->
-    <script>
-        const clickSound = document.getElementById("clickSound");
-
-        document.querySelectorAll("a, button").forEach(el => {
-            el.addEventListener("click", () => {
-                clickSound.currentTime = 0;
-                clickSound.play();
-            });
-        });
-    </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
 
