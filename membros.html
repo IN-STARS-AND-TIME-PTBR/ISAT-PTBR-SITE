@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Membros — ISAT PT-BR</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+<body class="sobre-pagina">
 
-<body>
-
-  <audio id="clickSound" src="0_oh.ogg" preload="auto"></audio>
-
+  <audio id="clickSound" src="0_oh.ogg"></audio>
   <div class="overlay-animated"></div>
 
-  <main class="page sobre-pagina">
+  <main class="page">
 
-    <h1 class="sobre-titulo">SOBRE O PROJETO</h1>
+    <a class="btn voltar-home" href="index.html">VOLTAR</a>
+
+    <h2 class="sobre-titulo">✦ Sobre o projeto</h2>
 
     <p class="sobre-desc">
       Somos uma equipe de tradutores e revisores amadores, atualmente composta por cinco membros,
-      sendo três tradutores e dois revisores, não contando com os moderadores do nosso servidor.
-      <br><br>
-      Atualmente, estamos no processo de traduzir In Stars and Time, e posteriormente vamos começar
+      sendo três tradutores e dois revisores, não contando com os moderadores do nosso servidor.<br><br>
+      Atualmente, estamos no processo de traduzir In Stars And Time, e posteriormente vamos começar
       a tradução de Start Again. Acompanhe-nos nessa jornada!
     </p>
 
-    <!-- imagem que você enviou -->
-    <img src="assets/sobre-img.png" class="sobre-imagem">
+    <img src="assets/equipe-line.png" class="sobre-imagem">
 
-    <!-- CAIXA PRETA DE MEMBROS -->
+    <h2 class="sobre-titulo">EQUIPE</h2>
+
     <div class="membros-box">
 
-      <div class="seta seta-esq" onclick="mudarMembro(-1)">◀</div>
+      <div class="seta" onclick="mudarMembro(-1)">&#8592;</div>
 
       <div class="membro-view">
-        <img id="mAvatar">
-        <h2 id="mNome"></h2>
-        <p id="mFuncao"></p>
+        <img id="mAvatar" src="">
+        <div id="mNome"></div>
+        <div id="mFuncao"></div>
       </div>
 
-      <div class="seta seta-dir" onclick="mudarMembro(1)">▶</div>
+      <div class="seta" onclick="mudarMembro(1)">&#8594;</div>
 
     </div>
-
-    <a href="index.html" class="btn voltar-home">VOLTAR</a>
 
   </main>
 
@@ -52,4 +50,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
