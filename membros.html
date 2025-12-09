@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ISAT — Membros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="clickSound" src="assets/0_oh.ogg" preload="auto"></audio>
+  <div class="overlay-animated" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="top">
+      <img src="assets/logo.png" alt="In Stars And Time PT-BR" class="title-img">
+      <nav class="buttons">
+        <a class="btn" href="index.html">VOLTAR</a>
+      </nav>
+    </header>
+
+    <!-- Sobre (conteúdo breve) -->
+    <section class="section about-box">
+      <h2>Sobre o projeto</h2>
+      <p>
+        O projeto de tradução PT-BR de In Stars And Time é feito com amor,
+        dedicação e cuidado para trazer a melhor experiência possível para
+        fãs brasileiros.
+      </p>
+
+      <!-- (Você pediu para não manter a imagem dupla aqui — portanto removida) -->
+    </section>
+
+    <!-- SEÇÃO "EQUIPE DO PROJETO" (slider somente nesta página) -->
+    <section class="section members-section">
+      <h2>Equipe do Projeto</h2>
+
+      <div class="member-card" id="memberCard">
+        <div class="avatar-frame">
+          <img id="memberAvatar" src="assets/placeholder-avatar.png" alt="avatar">
+        </div>
+        <h3 id="memberName">Nome</h3>
+        <div id="memberRole" class="member-role">Função</div>
+        <div id="memberPronouns" class="member-pronouns">Pronome</div>
+
+        <div class="member-controls">
+          <button id="prevMember" class="arrow-btn" aria-label="Anterior">←</button>
+          <button id="nextMember" class="arrow-btn" aria-label="Próximo">→</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <img src="assets/sifrin-miudo.png" alt="Sifrin miudo" class="sifrin-miudo" id="sifrinMiudo">
+
+  <script src="script.js"></script>
+</body>
+</html>
