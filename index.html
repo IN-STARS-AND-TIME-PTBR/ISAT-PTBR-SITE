@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
@@ -8,35 +8,63 @@
 </head>
 <body>
 
-  <!-- ÁUDIO DE CLIQUE -->
-  <audio id="clickSound" src="assets/0_oh.ogg" preload="auto"></audio>
+  <audio id="clickSound" src="0_oh.ogg" preload="auto"></audio>
 
-  <!-- CAMADA ANIMADA SOBRE O FUNDO ESTÁTICO -->
   <div class="overlay-animated" aria-hidden="true"></div>
 
   <main class="page">
     <header class="top">
+
       <img src="assets/logo.png" alt="In Stars And Time PT-BR" class="title-img">
+
       <img src="assets/pixelart.png" alt="Avatar" class="avatar pixel-avatar">
+
       <p class="welcome">* Boas vindas, Stardust!</p>
 
-      <!-- NOTE: o botão SOBRE vai para membros.html -->
       <nav class="buttons">
         <a class="btn" href="membros.html">SOBRE</a>
-        <a class="btn" href="#reset">START AGAIN</a>
+        <a class="btn" href="#">START AGAIN</a>
         <a class="btn" href="#isat">ISAT</a>
       </nav>
+
     </header>
 
-    <!-- conteúdo original (Sobre curto) -->
-    <section id="sobre" class="section">
-      <h2>Sobre</h2>
-      <p>Informações sobre o projeto de tradução PT-BR.</p>
+    <!-- SEÇÃO DA HOME (continua existindo!!) -->
+    <section id="sobre-home" class="section">
+      <h2>Equipe</h2>
 
-      <!-- fileira pequena (uma imagem única) -->
-      <div class="small-row">
-        <img src="assets/row-small.png" alt="personagens pequenos" />
+      <div class="membros-grid">
+        <div class="m-card">
+          <img src="https://cdn.discordapp.com/avatars/926595414021533726/95f7c8098c3b8f54b9e60afd34d896ff.png" alt="">
+          <p>fely_in — Dono / Tradutor Principal</p>
+        </div>
+
+        <div class="m-card">
+          <img src="https://cdn.discordapp.com/avatars/412626853510250497/78ab8417be17cdd7fcbb4ed159733d04.png?size=1024" alt="">
+          <p>lowneta — Tradutor</p>
+        </div>
+
+        <div class="m-card">
+          <img src="https://cdn.discordapp.com/avatars/561318349678706688/687ce5118ad8cdb72064f0e8e0e54692.png" alt="">
+          <p>ellie — Revisor</p>
+        </div>
+
+        <div class="m-card">
+          <img src="https://cdn.discordapp.com/avatars/722986991184248862/955a45b39c585fd2d3e6daa3eb5e3402.png" alt="">
+          <p>starmio — Revisor (ele/dele)</p>
+        </div>
+
+        <div class="m-card">
+          <img src="https://cdn.discordapp.com/avatars/353245192947630090/2cb3bd72316a819f792ba64c09933661.png" alt="">
+          <p>kirbo — Revisor</p>
+        </div>
+
+        <div class="m-card">
+          <img src="https://cdn.discordapp.com/avatars/1017067650234458183/e31b94205a5c66deb6b8364213aa2236.png" alt="">
+          <p>tapioka — Admin</p>
+        </div>
       </div>
+
     </section>
 
     <section id="isat" class="section">
@@ -45,23 +73,17 @@
     </section>
 
     <footer class="icons">
-      <a href="https://www.youtube.com/@ISAT-PT-BR" target="_blank" rel="noopener" aria-label="YouTube">
-        <img src="assets/yt.png" alt="YouTube">
-      </a>
-      <a href="https://github.com/IN-STARS-AND-TIME-PTBR/IN-STARS-AND-TIME-EM-PTBR" target="_blank" rel="noopener" aria-label="GitHub">
-        <img src="assets/gh.png" alt="GitHub">
-      </a>
-      <a href="https://x.com/ISAT_PTBR" target="_blank" rel="noopener" aria-label="X">
-        <img src="assets/x.png" alt="X">
-      </a>
-      <a href="https://discord.gg/JNPGp3U59V" target="_blank" rel="noopener" aria-label="Discord">
-        <img src="assets/dc.png" alt="Discord">
-      </a>
+      <a href="#"><img src="assets/yt.png"></a>
+      <a href="#"><img src="assets/gh.png"></a>
+      <a href="#"><img src="assets/x.png"></a>
+      <a href="#"><img src="assets/dc.png"></a>
     </footer>
+
   </main>
 
-  <img src="assets/sifrin-miudo.png" alt="Sifrin miudo" class="sifrin-miudo" id="sifrinMiudo">
+  <img src="assets/sifrin-miudo.png" class="sifrin-miudo">
 
   <script src="script.js"></script>
 </body>
 </html>
+
