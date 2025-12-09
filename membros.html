@@ -1,58 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ISAT — Membros</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membros — ISAT PT-BR</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <audio id="clickSound" src="assets/0_oh.ogg" preload="auto"></audio>
-  <div class="overlay-animated" aria-hidden="true"></div>
 
-  <main class="page">
-    <header class="top">
-      <img src="assets/logo.png" alt="In Stars And Time PT-BR" class="title-img">
-      <nav class="buttons">
-        <a class="btn" href="index.html">VOLTAR</a>
-      </nav>
-    </header>
+  <audio id="clickSound" src="0_oh.ogg" preload="auto"></audio>
 
-    <!-- Sobre (conteúdo breve) -->
-    <section class="section about-box">
-      <h2>Sobre o projeto</h2>
-      <p>
-        O projeto de tradução PT-BR de In Stars And Time é feito com amor,
-        dedicação e cuidado para trazer a melhor experiência possível para
-        fãs brasileiros.
-      </p>
+  <div class="overlay-animated"></div>
 
-      <!-- (Você pediu para não manter a imagem dupla aqui — portanto removida) -->
-    </section>
+  <main class="page sobre-pagina">
 
-    <!-- SEÇÃO "EQUIPE DO PROJETO" (slider somente nesta página) -->
-    <section class="section members-section">
-      <h2>Equipe do Projeto</h2>
+    <h1 class="sobre-titulo">SOBRE O PROJETO</h1>
 
-      <div class="member-card" id="memberCard">
-        <div class="avatar-frame">
-          <img id="memberAvatar" src="assets/placeholder-avatar.png" alt="avatar">
-        </div>
-        <h3 id="memberName">Nome</h3>
-        <div id="memberRole" class="member-role">Função</div>
-        <div id="memberPronouns" class="member-pronouns">Pronome</div>
+    <p class="sobre-desc">
+      Somos uma equipe de tradutores e revisores amadores, atualmente composta por cinco membros,
+      sendo três tradutores e dois revisores, não contando com os moderadores do nosso servidor.
+      <br><br>
+      Atualmente, estamos no processo de traduzir In Stars and Time, e posteriormente vamos começar
+      a tradução de Start Again. Acompanhe-nos nessa jornada!
+    </p>
 
-        <div class="member-controls">
-          <button id="prevMember" class="arrow-btn" aria-label="Anterior">←</button>
-          <button id="nextMember" class="arrow-btn" aria-label="Próximo">→</button>
-        </div>
+    <!-- imagem que você enviou -->
+    <img src="assets/sobre-img.png" class="sobre-imagem">
+
+    <!-- CAIXA PRETA DE MEMBROS -->
+    <div class="membros-box">
+
+      <div class="seta seta-esq" onclick="mudarMembro(-1)">◀</div>
+
+      <div class="membro-view">
+        <img id="mAvatar">
+        <h2 id="mNome"></h2>
+        <p id="mFuncao"></p>
       </div>
-    </section>
+
+      <div class="seta seta-dir" onclick="mudarMembro(1)">▶</div>
+
+    </div>
+
+    <a href="index.html" class="btn voltar-home">VOLTAR</a>
 
   </main>
 
-  <img src="assets/sifrin-miudo.png" alt="Sifrin miudo" class="sifrin-miudo" id="sifrinMiudo">
+  <img src="assets/sifrin-miudo.png" class="sifrin-miudo">
 
   <script src="script.js"></script>
 </body>
 </html>
+
