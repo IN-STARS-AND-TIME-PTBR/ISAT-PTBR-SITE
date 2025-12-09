@@ -1,85 +1,64 @@
-// CLICK SOUND
+// click sound for links/buttons
 const clickSound = document.getElementById("clickSound");
 if (clickSound) {
-  document.querySelectorAll("a, button").forEach(el => {
-    el.addEventListener("click", () => {
-      clickSound.currentTime = 0;
-      clickSound.play().catch(() => {});
+  document.querySelectorAll("a, .btn, button").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      try { clickSound.currentTime = 0; clickSound.play().catch(()=>{}); } catch(e){}
     });
   });
 }
 
-// REDUZIR ANIMAÇÃO SE O USUÁRIO FORCE
+// reduced motion respect
 const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
 if (mq.matches) {
   const ov = document.querySelector(".overlay-animated");
   if (ov) ov.style.animation = "none";
 }
 
-// ==========================
-// SISTEMA DE MEMBROS
-// ==========================
-const membros = [
-  {
-    nome: "fely_in",
-    cargo: "Dono / Tradutor Principal",
-    pronome: "ele/dele",
-    foto: "https://cdn.discordapp.com/avatars/926595414021533726/95f7c8098c3b8f54b9e60afd34d896ff.png"
-  },
-  {
-    nome: "lowneta",
-    cargo: "Tradutor",
-    pronome: "ele/dele",
-    foto: "https://cdn.discordapp.com/avatars/412626853510250497/78ab8417be17cdd7fcbb4ed159733d04.png"
-  },
-  {
-    nome: "ellie",
-    cargo: "Tradutora",
-    pronome: "ela/dela",
-    foto: "https://cdn.discordapp.com/avatars/561318349678706688/687ce5118ad8cdb72064f0e8e0e54692.png"
-  },
-  {
-    nome: "starmio",
-    cargo: "Revisor(a)",
-    pronome: "ele/ela",
-    foto: "https://cdn.discordapp.com/avatars/722986991184248862/955a45b39c585fd2d3e6daa3eb5e3402.png"
-  },
-  {
-    nome: "kirbo",
-    cargo: "Revisor",
-    pronome: "ele/dele",
-    foto: "https://cdn.discordapp.com/avatars/353245192947630090/2cb3bd72316a819f792ba64c09933661.png"
-  },
-  {
-    nome: "tapioka",
-    cargo: "Administrador",
-    pronome: "ele/dele",
-    foto: "https://cdn.discordapp.com/avatars/1017067650234458183/e31b94205a5c66deb6b8364213aa2236.png"
+/* ----------------------------
+   SLIDER DOS MEMBROS (membros.html)
+   só roda se a página tiver #memberCard
+   ---------------------------- */
+(function(){
+  const card = document.getElementById("memberCard");
+  if (!card) return; // se não for membros.html, não faz nada
+
+  // LISTA DE MEMBROS (ordem: fely_in, lowneta, ellie, starmio, kirbo, tapioka)
+  // URLs de avatar: CDN do Discord (id + hash)
+  const members = [
+    { id: "926595414021533726", hash:"95f7c8098c3b8f54b9e60afd34d896ff", name:"fely_in", role:"Dono / Tradutor Principal", pronouns:"ele / dele" },
+    { id: "78ab8417be17cdd7fcbb4ed159733d04", hash:"78ab8417be17cdd7fcbb4ed159733d04", name:"lowneta", role:"Tradutora", pronouns:"ela / dela" },
+    { id: "561318349678706688", hash:"687ce5118ad8cdb72064f0e8e0e54692", name:"ellie", role:"Tradutor", pronouns:"ela / dela" },
+    { id: "722986991184248862", hash:"955a45b39c585fd2d3e6daa3eb5e3402", name:"starmio", role:"Revisor", pronouns:"ele / dele" },
+    { id: "353245192947630090", hash:"2cb3bd72316a819f792ba64c09933661", name:"kirbo", role:"Revisor", pronouns:"ele / dele" },
+    { id: "1017067650234458183", hash:"e31b94205a5c66deb6b8364213aa2236", name:"tapioka", role:"Administrador", pronouns:"ele / dele" }
+  ];
+
+  // helper to build avatar url (Discord CDN)
+  const avatarUrl = (m)=>`https://cdn.discordapp.com/avatars/${m.id}/${m.hash}.png?size=256`;
+
+  // DOM refs
+  const img = document.getElementById("memberAvatar");
+  const nm  = document.getElementById("memberName");
+  const rl  = document.getElementById("memberRole");
+  const pr  = document.getElementById("memberPronouns");
+  const prevBtn = document.getElementById("prevMember");
+  const nextBtn = document.getElementById("nextMember");
+
+  let index = 0;
+  function render(i){
+    const m = members[i];
+    // tentar usar avatar pela CDN; se o usuário não tiver avatar pública, pode 404 (navegador mostra vazio)
+    img.src = avatarUrl(m);
+    img.alt = m.name;
+    nm.textContent = m.name;
+    rl.textContent = m.role;
+    pr.textContent = m.pronouns;
   }
-];
 
-let indexAtual = 0;
+  prevBtn.addEventListener("click", ()=>{ index = (index-1 + members.length) % members.length; render(index); });
+  nextBtn.addEventListener("click", ()=>{ index = (index+1) % members.length; render(index); });
 
-function atualizarMembro() {
-  const m = membros[indexAtual];
-  document.getElementById("membroFoto").src = m.foto;
-  document.getElementById("membroNome").textContent = m.nome;
-  document.getElementById("membroCargo").textContent = m.cargo;
-  document.getElementById("membroPronome").textContent = m.pronome;
-}
-
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
-
-if (prev && next) {
-  prev.addEventListener("click", () => {
-    indexAtual = (indexAtual - 1 + membros.length) % membros.length;
-    atualizarMembro();
-  });
-  next.addEventListener("click", () => {
-    indexAtual = (indexAtual + 1) % membros.length;
-    atualizarMembro();
-  });
-
-  atualizarMembro();
-}
+  // render inicial
+  render(index);
+})();
