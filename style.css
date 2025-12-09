@@ -1,65 +1,101 @@
-// click sound for links/buttons
-const clickSound = document.getElementById("clickSound");
-if (clickSound) {
-  document.querySelectorAll("a, .btn, button").forEach(el=>{
-    el.addEventListener("click", ()=>{
-      try { clickSound.currentTime = 0; clickSound.play().catch(()=>{}); } catch(e){}
-    });
-  });
+/* ===========================
+   Fonte
+=========================== */
+@font-face {
+  font-family: "VCR";
+  src: url("assets/VCR_OSD_MONO.ttf") format("truetype");
+  font-display: swap;
 }
 
-// reduced motion respect
-const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-if (mq.matches) {
-  const ov = document.querySelector(".overlay-animated");
-  if (ov) ov.style.animation = "none";
+:root{
+  --max-width:1100px;
+  --white:#fff;
+  --muted:#d9d9d9;
+  --card-bg: #000;
+  --card-border: #fff;
 }
 
-/* ----------------------------
-   SLIDER DOS MEMBROS (membros.html)
-   só roda se a página tiver #memberCard
-   ---------------------------- */
-(function(){
-  const card = document.getElementById("memberCard");
-  if (!card) return; // se não for membros.html, não faz nada
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "VCR", monospace;
+  color:var(--white);
+  background-color:#000;
+  background-image: url("assets/sifrin-loop.png");
+  background-size: cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  overflow-x:hidden;
+}
 
-  // LISTA DE MEMBROS (ordem: fely_in, lowneta, ellie, starmio, kirbo, tapioka)
-  // URLs de avatar: CDN do Discord (id + hash)
-  const members = [
-    { id: "926595414021533726", hash:"95f7c8098c3b8f54b9e60afd34d896ff", name:"fely_in", role:"Dono / Tradutor Principal", pronouns:"ele / dele" },
-    { id: "78ab8417be17cdd7fcbb4ed159733d04", hash:"78ab8417be17cdd7fcbb4ed159733d04", name:"lowneta", role:"Tradutora", pronouns:"ela / dela" },
-    { id: "561318349678706688", hash:"687ce5118ad8cdb72064f0e8e0e54692", name:"ellie", role:"Tradutor", pronouns:"ela / dela" },
-    { id: "722986991184248862", hash:"955a45b39c585fd2d3e6daa3eb5e3402", name:"starmio", role:"Revisor", pronouns:"ele / dele" },
-    { id: "353245192947630090", hash:"2cb3bd72316a819f792ba64c09933661", name:"kirbo", role:"Revisor", pronouns:"ele / dele" },
-    { id: "1017067650234458183", hash:"e31b94205a5c66deb6b8364213aa2236", name:"tapioka", role:"Administrador", pronouns:"ele / dele" }
-  ];
+/* overlay animado */
+.overlay-animated{
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  background-image: url("assets/bg.png");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity:0.45;
+  animation: bgScroll 18s linear infinite;
+}
+@keyframes bgScroll { from{background-position:0 0} to{background-position:300px 300px} }
 
-  // helper to build avatar url (Discord CDN)
-  const avatarUrl = (m)=>`https://cdn.discordapp.com/avatars/${m.id}/${m.hash}.png?size=256`;
+/* layout */
+.page{position:relative; z-index:2; max-width:var(--max-width); margin:40px auto; padding:40px 20px; text-align:center}
+.title-img{display:block; margin:0 auto 14px; max-width:760px; width:calc(100% - 120px); image-rendering:pixelated}
+.pixel-avatar{width:160px; height:auto; display:block; margin: 18px auto 6px; image-rendering:pixelated}
+.welcome{margin:12px 0 18px; font-size:20px; letter-spacing:2px}
 
-  // DOM refs
-  const img = document.getElementById("memberAvatar");
-  const nm  = document.getElementById("memberName");
-  const rl  = document.getElementById("memberRole");
-  const pr  = document.getElementById("memberPronouns");
-  const prevBtn = document.getElementById("prevMember");
-  const nextBtn = document.getElementById("nextMember");
+/* botões */
+.buttons{display:flex; gap:18px; justify-content:center; align-items:center; margin-bottom:26px}
+.btn{display:inline-block; padding:12px 24px; color:var(--white); text-decoration:none; border:2px solid rgba(255,255,255,0.9); letter-spacing:4px; transition:all 180ms ease; background:transparent; font-size:16px}
+.btn:hover{transform:translateY(-3px); box-shadow:0 6px 18px rgba(255,255,255,0.12); filter:brightness(1.25); border-color:rgba(255,255,255,1)}
 
-  let index = 0;
-  function render(i){
-    const m = members[i];
-    // tentar usar avatar pela CDN; se o usuário não tiver avatar pública, pode 404 (navegador mostra vazio)
-    img.src = avatarUrl(m);
-    img.alt = m.name;
-    nm.textContent = m.name;
-    rl.textContent = m.role;
-    pr.textContent = m.pronouns;
-  }
+/* SECTIONS */
+.section{margin:60px auto; max-width:760px; text-align:center; color:var(--muted)}
+.section h2{color:var(--white); margin-bottom:12px}
 
-  prevBtn.addEventListener("click", ()=>{ index = (index-1 + members.length) % members.length; render(index); });
-  nextBtn.addEventListener("click", ()=>{ index = (index+1) % members.length; render(index); });
+/* small row (home) */
+.small-row{margin-top:6px}
+.small-row img{width:360px; max-width:86%; image-rendering:pixelated; display:block; margin:10px auto}
 
-  // render inicial
-  render(index);
-})();
+/* member card (slider) - usado apenas em membros.html */
+.members-section .member-card{
+  width:360px; margin:28px auto; padding:26px; background:var(--card-bg); border:3px solid var(--card-border);
+  text-align:center; box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+.avatar-frame{width:120px; height:120px; margin:0 auto 12px; padding:8px; border:2px solid rgba(255,255,255,0.9); border-radius:10px; background:transparent}
+.avatar-frame img{width:100%; height:100%; object-fit:cover; border-radius:6px; image-rendering:pixelated}
+.member-card h3{font-size:20px; margin:6px 0; text-transform:lowercase; letter-spacing:2px}
+.member-role{font-size:14px; margin:6px 0; color:var(--muted)}
+.member-pronouns{font-size:13px; color:var(--muted); margin-bottom:12px}
 
+/* arrow buttons */
+.member-controls{display:flex; gap:18px; justify-content:center; margin-top:8px}
+.arrow-btn{background:transparent; color:var(--white); border:2px solid rgba(255,255,255,0.95); padding:8px 18px; font-size:18px; cursor:pointer}
+.arrow-btn:active{transform:translateY(1px)}
+.arrow-btn:hover{box-shadow:0 6px 16px rgba(255,255,255,0.08)}
+
+/* about-box (membros.html) */
+.about-box{max-width:760px; margin:28px auto; padding:20px; background:var(--card-bg); border:3px solid var(--card-border)}
+
+/* icons footer */
+.icons{display:flex; justify-content:center; gap:18px; margin-top:30px; align-items:center}
+.icons img{width:48px; height:48px; display:block; transition: transform 160ms ease}
+.icons a:hover img{transform:scale(1.05)}
+
+/* sifrin miudo */
+.sifrin-miudo{position:fixed; right:22px; bottom:20px; width:92px; z-index:3; image-rendering:pixelated; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.7)); transition: transform 160ms ease; animation: sifrinPulse 1.8s ease-in-out infinite}
+@keyframes sifrinPulse {0%{filter:drop-shadow(0 3px 8px rgba(0,0,0,0.7)) brightness(1); transform:translateY(0)}40%{filter:drop-shadow(0 6px 18px rgba(0,0,0,0.8)) brightness(1.5); transform:translateY(-2px)}100%{filter:drop-shadow(0 3px 8px rgba(0,0,0,0.7)) brightness(1); transform:translateY(0)}}
+
+/* cursor custom */
+body, a, button { cursor: url("assets/cursor.png") 8 8, auto; }
+
+/* responsive */
+@media (max-width:900px){
+  .title-img{width:86%; max-width:600px}
+  .pixel-avatar{width:128px}
+  .btn{padding:10px 18px; font-size:14px}
+  .sifrin-miudo{width:72px}
+  .members-section .member-card{width:92%}
+}
