@@ -16,17 +16,17 @@ const membros = [
   },
   {
     nome: "lowneta",
-    funcao: "Tradutor",
+    funcao: "Tradutora",
     avatar: "https://cdn.discordapp.com/avatars/412626853510250497/78ab8417be17cdd7fcbb4ed159733d04.png?size=1024"
   },
   {
     nome: "ellie",
-    funcao: "Revisor",
+    funcao: "Revisora",
     avatar: "https://cdn.discordapp.com/avatars/561318349678706688/687ce5118ad8cdb72064f0e8e0e54692.png"
   },
   {
     nome: "starmio",
-    funcao: "Revisor (ele/dele)",
+    funcao: "Revisora",
     avatar: "https://cdn.discordapp.com/avatars/722986991184248862/955a45b39c585fd2d3e6daa3eb5e3402.png"
   },
   {
@@ -59,3 +59,4 @@ function mudarMembro(dir){
 if(window.location.href.includes("membros.html")){
   carregarMembro();
 }
+
