@@ -12,7 +12,7 @@ const membros = [
   {
     nome: "fely_in",
     funcao: "Dono",
-    avatar: "hhttps://i.imgur.com/SDqgZMu.png"
+    avatar: "https://i.imgur.com/5hrrIfu.png"
   },
   {
     nome: "lowneta",
@@ -64,5 +64,6 @@ function mudarMembro(dir){
 if(window.location.href.includes("membros.html")){
   carregarMembro();
 }
+
 
 
