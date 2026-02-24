@@ -323,6 +323,16 @@ body, a, button{
 .personagem-avatar{
   width: 160px;   /* tamanho final exibido */
   height: 160px;
+}
+     
+@media (max-width: 768px) {
+  .logo-isat {
+    max-width: 260px;
+    margin-top: 30px;
   }
 }
+   
+  }
+}
+
 
