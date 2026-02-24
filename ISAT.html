@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ISAT — In Stars and Time</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="overlay-animated" aria-hidden="true"></div>
+
+  <main class="page sobre-pagina">
+
+    <!-- TÍTULO -->
+    <h1 class="sobre-titulo">In Stars and Time</h1>
+
+    <!-- DESCRIÇÃO -->
+    <p class="sobre-desc">
+      In Stars and Time é um RPG de aventura com mecânica de loop temporal,
+      desenvolvido pela insertdisc5 e publicado pela Armor Games Studios,
+      lançado em 20 de novembro de 2023.
+      <br><br>
+      Após um encontro desconfortavelmente próximo com uma armadilha, o líder
+      do grupo, Siffrin, descobre que estão presos em um loop temporal, capazes
+      de recomeçar o dia sem que ninguém perceba.
+      <br><br>
+      O que começa como uma vantagem logo se torna um fardo. Preso a reviver
+      os mesmos eventos, Siffrin carrega o peso do mundo — e do tempo —
+      sobre os ombros. Será que ele conseguirá quebrar o loop antes que ele o quebre?
+    </p>
+
+    <!-- PERSONAGENS -->
+    <h2>EQUIPE / PERSONAGENS</h2>
+
+    <div class="membros-box">
+
+      <div class="seta" onclick="mudarPersonagem(-1)">&#8592;</div>
+
+      <div class="membro-view">
+        <img id="pAvatar" src="" alt="Personagem">
+        <div id="pNome">Nome do Personagem</div>
+        <div id="pDesc">Descrição do personagem aqui</div>
+      </div>
+
+      <div class="seta" onclick="mudarPersonagem(1)">&#8594;</div>
+
+    </div>
+
+    <!-- VOLTAR -->
+    <a class="btn voltar-home" href="index.html">VOLTAR</a>
+
+  </main>
+
+  <img src="assets/sifrin-miudo.png" class="sifrin-miudo">
+
+  <script src="script.js"></script>
+</body>
+</html>
