@@ -142,5 +142,22 @@
 
   .timeline-ponto{
     margin:0 0 8px -26px;
+
+.discord-float{
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  transition: transform 0.25s ease;
+}
+
+.discord-float img{
+  width: 140px; /* ajuste se quiser */
+  image-rendering: pixelated;
+}
+
+.discord-float:hover{
+  transform: scale(1.08) translateY(-4px);
+}
   }
 }
