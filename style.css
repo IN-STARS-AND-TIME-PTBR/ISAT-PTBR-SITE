@@ -326,8 +326,11 @@ body, a, button{
 }
      
 @media (max-width: 768px) {
-  .logo-isat {
+  main > img:first-of-type {
     max-width: 260px;
-    margin-top: 30px;
+    margin: 30px auto 0;
   }
 }
+  }
+}
+
