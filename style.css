@@ -325,12 +325,14 @@ body, a, button{
   height: 160px;
 }
      
-@media (max-width: 768px) {
-  main > img:first-of-type {
-    max-width: 260px;
-    margin: 30px auto 0;
+#membro-view img,
+.pixel-art,
+#pAvatar {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+     
   }
 }
-  }
-}
-
