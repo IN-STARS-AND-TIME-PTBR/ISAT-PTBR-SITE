@@ -309,5 +309,20 @@ body, a, button{
   .seta{
     order:-1;
     font-size:32px;
+/* =============================
+        PIXEL ART (ISAT)
+============================= */
+
+.pixel-art{
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* Avatar de personagem ISAT */
+.personagem-avatar{
+  width: 160px;   /* tamanho final exibido */
+  height: 160px;
   }
 }
+
