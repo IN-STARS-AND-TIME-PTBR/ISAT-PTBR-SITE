@@ -11,33 +11,38 @@ document.querySelectorAll("a, button, .btn").forEach(el=>{
 const membros = [
   {
     nome: "fely_in",
-    funcao: "Dono / Tradutor Principal",
-    avatar: "https://cdn.discordapp.com/avatars/926595414021533726/95f7c8098c3b8f54b9e60afd34d896ff.png"
+    funcao: "Dono",
+    avatar: "hhttps://i.imgur.com/SDqgZMu.png"
   },
   {
     nome: "lowneta",
-    funcao: "Tradutora",
-    avatar: "https://cdn.discordapp.com/avatars/412626853510250497/78ab8417be17cdd7fcbb4ed159733d04.png?size=1024"
+    funcao: "Tradutora/Programadora",
+    avatar: "https://i.imgur.com/vAUJ45P.png"
   },
   {
     nome: "ellie",
-    funcao: "Revisora",
-    avatar: "https://cdn.discordapp.com/avatars/561318349678706688/687ce5118ad8cdb72064f0e8e0e54692.png"
+    funcao: "Revisora/tradutora",
+    avatar: "https://i.imgur.com/1wxrYm2.png"
   },
   {
     nome: "starmio",
-    funcao: "Revisora",
-    avatar: "https://cdn.discordapp.com/avatars/722986991184248862/955a45b39c585fd2d3e6daa3eb5e3402.png"
+    funcao: "Revisora/tradutora/Organização das Planilhas",
+    avatar: "https://i.imgur.com/E45eIq1.png"
   },
   {
     nome: "kirbo",
-    funcao: "Revisor",
-    avatar: "https://cdn.discordapp.com/avatars/353245192947630090/2cb3bd72316a819f792ba64c09933661.png"
+    funcao: "Revisor/Tradutor",
+    avatar: "https://i.imgur.com/B7mrGJw.png"
   },
   {
     nome: "tapioka",
     funcao: "Admin",
-    avatar: "https://cdn.discordapp.com/avatars/1017067650234458183/e31b94205a5c66deb6b8364213aa2236.png"
+    avatar: "https://i.imgur.com/IMc7U5T.png"
+  },
+  {
+    nome: "Ale",
+    funcao: "Tradutora",
+    avatar: "https://i.imgur.com/jpGzydR.png"
   }
 ];
 
@@ -59,4 +64,5 @@ function mudarMembro(dir){
 if(window.location.href.includes("membros.html")){
   carregarMembro();
 }
+
 
