@@ -3,20 +3,31 @@
 const personagens = [
   {
     nome: "Siffrin",
-    desc: "Protagonista da história. Preso em um loop temporal, carrega o peso do mundo enquanto tenta manter a esperança.",
+    desc: "O Viajante Estagnado. Preso em um loop temporal eterno, ele carrega sozinho o trauma de mil mortes e falhas que ninguém mais lembra. Esconde sua exaustão mental e continua, lutando para não perder a sanidade enquanto tenta desesperadamente forçar um futuro onde ele consiga sair do loop e derrotar o rei.",
     avatar: "assets/placeholder.png"
   },
   {
-    nome: "Personagem 2",
-    desc: "Descrição temporária do personagem.",
+    nome: "Mirabelle",
+    desc: "A Estrela de Esperança do grupo. Carrega a bênção da Mudança e a pressão imensa de ser a escolhida para salvar a vaugard, lutando para manter sua fé e otimismo enquanto esconde suas próprias inseguranças por trás de seu papel sagrado.",
     avatar: "assets/placeholder.png"
   },
   {
-    nome: "Personagem 3",
-    desc: "Descrição temporária do personagem.",
+    nome: "Isabeu",
+    desc: "O Coração Defensor. Um guerreiro de uma bondade inabalável que serve como a âncora emocional do time. Sob sua força física e piadas leves, esconde uma sensibilidade profunda e um desejo fervoroso de que ninguém — especialmente Siffrin — sofra sozinho..",
     avatar: "assets/placeholder.png"
+  },
+  {
+    nome: "Odile",
+    desc: "A Mente Analítica. Uma pesquisadora perspicaz e pragmática que valoriza o conhecimento acima de tudo. É o filtro da razão no grupo, sempre focada em desvendar a lógica do mundo e do Rei, mesmo que sua postura severa esconda um instinto protetor quase maternal.",
+    avatar: "assets/placeholder.png
+  },
+  {
+    nome: "Bonnie",
+    desc: "A Inocência Resiliente. O membro mais jovem e a alma do grupo. Com sua energia caótica e habilidades culinárias, Bonnie é o lembrete constante do que está em jogo, representando o futuro que o resto do time está disposto a morrer para proteger.",
+    avatar: "assets/placeholder.png      
   }
 ];
+
 
 let pIdx = 0;
 
@@ -36,3 +47,4 @@ function mudarPersonagem(dir){
 if(window.location.href.includes("isat.html")){
   carregarPersonagem();
 }
+
