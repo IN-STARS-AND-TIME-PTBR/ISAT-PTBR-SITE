@@ -18,6 +18,11 @@ const membros = [
     nome: "lowneta",
     funcao: "Tradutora/Programadora",
     avatar: "https://i.imgur.com/vAUJ45P.png"
+    },
+  {
+    nome: "nervouscharlotte",
+    funcao: "Admin",
+    avatar: "https://i.imgur.com/J1fZXTi.png"
   },
   {
     nome: "ellie",
@@ -64,6 +69,7 @@ function mudarMembro(dir){
 if(window.location.href.includes("membros.html")){
   carregarMembro();
 }
+
 
 
 
