@@ -2,24 +2,27 @@ fetch("https://isat-changelog-webhook.onrender.com/changelog")
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById("avisos-container");
+    container.innerHTML = "";
 
-    data.forEach((aviso, index) => {
-      const box = document.createElement("div");
-      box.className = "aviso";
+    if (!data.length) {
+      container.innerHTML = "<p>* Nenhum aviso ainda.</p>";
+      return;
+    }
 
-      box.innerHTML = `
-        <h2>Aviso ${index + 1}</h2>
+    data.forEach((aviso, i) => {
+      const div = document.createElement("div");
+      div.className = "aviso";
+
+      div.innerHTML = `
+        <h2>Aviso ${i + 1}</h2>
         <p>${aviso.content}</p>
-        <div class="meta">
-          ${aviso.date} • ${aviso.author}
-        </div>
+        <div class="meta">${aviso.date} • ${aviso.author}</div>
       `;
 
-      container.appendChild(box);
+      container.appendChild(div);
     });
   })
-  .catch(err => {
+  .catch(() => {
     document.getElementById("avisos-container").innerHTML =
-      "<p>Erro ao carregar avisos.</p>";
-    console.error(err);
+      "<p>* Erro ao carregar avisos.</p>";
   });
