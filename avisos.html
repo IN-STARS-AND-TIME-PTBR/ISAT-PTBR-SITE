@@ -2,21 +2,31 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <title>Avisos • ISAT PT-BR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avisos • ISAT PT-BR</title>
 
-  <link rel="stylesheet" href="avisos.css">
+  <!-- CSS PRINCIPAL -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="avisos-page">
-    <h1 class="title">📢 Avisos</h1>
+  <div class="overlay-animated" aria-hidden="true"></div>
 
-    <section id="avisos-container">
-      <!-- avisos entram aqui via JS -->
+  <main class="page">
+    <header class="top">
+      <p class="welcome">Avisos</p>
+
+      <nav class="buttons">
+        <a class="btn sound-link" href="index.html">HOME</a>
+      </nav>
+    </header>
+
+    <section class="section" id="avisos-container">
+      <p>* Carregando avisos...</p>
     </section>
   </main>
 
+  <!-- Siffrin miúdo (o MESMO da home) -->
   <img src="assets/sifrin-miudo.png" class="sifrin-miudo">
 
   <script src="avisos.js"></script>
