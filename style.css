@@ -333,8 +333,29 @@ body, a, button{
   outline: none;
   box-shadow: none;
 }
+     /* === AVISOS === */
+
+.aviso {
+  background: #000;
+  border: 2px solid #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.aviso h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.aviso .meta {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
      
   }
 }
+
 
 
