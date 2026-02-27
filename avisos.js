@@ -11,7 +11,8 @@ fetch("https://isat-changelog-webhook.onrender.com/changelog")
       return;
     }
 
-    data.forEach(aviso => {
+    // 🔥 ORDEM INVERTIDA (mais novo primeiro)
+    data.reverse().forEach(aviso => {
 
       const card = document.createElement("div");
       card.classList.add("post-card");
@@ -19,11 +20,11 @@ fetch("https://isat-changelog-webhook.onrender.com/changelog")
       card.innerHTML = `
         <div class="post-header">
           <img src="assets/avatar-exemplo.png" class="post-avatar pixel-art">
-          <span class="post-name">${aviso.author}</span>
+          <span class="post-name">Felyzito</span>
         </div>
 
         <div class="post-content">
-          ${aviso.content}
+          ${marked.parse(aviso.content)}
         </div>
       `;
 
@@ -35,4 +36,3 @@ fetch("https://isat-changelog-webhook.onrender.com/changelog")
     container.innerHTML = "<p>* Erro ao carregar avisos.</p>";
     console.error(err);
   });
-
