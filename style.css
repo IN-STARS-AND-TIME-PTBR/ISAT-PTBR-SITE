@@ -358,7 +358,7 @@ body, a, button{
 ============================= */
 
 .post-card{
-  background: #000;
+  background: rgba(0,0,0,0.85);
   border: 3px solid #fff;
   padding: 20px;
   margin: 25px auto;
@@ -380,16 +380,19 @@ body, a, button{
   object-fit: cover;
 }
 
+.post-user{
+  display: flex;
+  flex-direction: column;
+}
+
 .post-name{
   font-size: 18px;
   letter-spacing: 2px;
 }
 
 .post-content{
-  border-left: 3px solid #fff;
-  padding-left: 15px;
+  margin-left: 75px; /* ALINHA TEXTO COM O NOME */
   line-height: 1.5;
-  white-space: pre-line;
 }
      /* =============================
    MARKDOWN (ESTILO DISCORD)
@@ -425,6 +428,7 @@ body, a, button{
      
   }
 }
+
 
 
 
