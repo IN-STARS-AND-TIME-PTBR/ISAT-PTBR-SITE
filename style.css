@@ -391,9 +391,41 @@ body, a, button{
   line-height: 1.5;
   white-space: pre-line;
 }
+     /* =============================
+   MARKDOWN (ESTILO DISCORD)
+============================= */
+
+.post-content strong {
+  font-weight: bold;
+}
+
+.post-content em {
+  font-style: italic;
+}
+
+.post-content code {
+  background: rgba(255,255,255,0.15);
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: "VCR", monospace;
+}
+
+.post-content pre {
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.post-content blockquote {
+  border-left: 3px solid #fff;
+  padding-left: 10px;
+  opacity: 0.8;
+}
      
   }
 }
+
 
 
 
