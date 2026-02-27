@@ -423,9 +423,23 @@ body, a, button{
   padding-left: 10px;
   opacity: 0.8;
 }
+     /* =============================
+        CONTAINER DE AVISOS
+============================= */
+
+.avisos-box{
+  background: rgba(0,0,0,0.85);
+  border: 3px solid #fff;
+  padding: 30px;
+  width: 650px;
+  max-width: 95%;
+  margin: 0 auto;
+  text-align: left;
+}
      
   }
 }
+
 
 
 
