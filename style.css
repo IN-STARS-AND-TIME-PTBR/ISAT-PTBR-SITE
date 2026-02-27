@@ -357,8 +357,12 @@ body, a, button{
         CARD DE AVISO (ISAT)
 ============================= */
 
+/* =============================
+        CARD DE AVISO (ISAT)
+============================= */
+
 .post-card{
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.9);
   border: 3px solid #fff;
   padding: 20px;
   margin: 25px auto;
@@ -369,20 +373,15 @@ body, a, button{
 .post-header{
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 12px;
+  margin-bottom: 10px;
 }
 
 .post-avatar{
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border: 2px solid #fff;
   object-fit: cover;
-}
-
-.post-user{
-  display: flex;
-  flex-direction: column;
 }
 
 .post-name{
@@ -391,7 +390,6 @@ body, a, button{
 }
 
 .post-content{
-  margin-left: 75px; /* ALINHA TEXTO COM O NOME */
   line-height: 1.5;
 }
      /* =============================
@@ -428,6 +426,7 @@ body, a, button{
      
   }
 }
+
 
 
 
