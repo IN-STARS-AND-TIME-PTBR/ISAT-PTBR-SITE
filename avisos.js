@@ -11,7 +11,6 @@ fetch("https://isat-changelog-webhook.onrender.com/changelog")
       return;
     }
 
-    // 🔥 ORDEM INVERTIDA (mais novo primeiro)
     data.reverse().forEach(aviso => {
 
       const card = document.createElement("div");
@@ -20,7 +19,9 @@ fetch("https://isat-changelog-webhook.onrender.com/changelog")
       card.innerHTML = `
         <div class="post-header">
           <img src="assets/avatar-exemplo.png" class="post-avatar pixel-art">
-          <span class="post-name">Felyzito</span>
+          <div class="post-user">
+            <span class="post-name">Felyzito</span>
+          </div>
         </div>
 
         <div class="post-content">
