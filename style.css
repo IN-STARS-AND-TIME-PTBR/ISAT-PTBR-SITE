@@ -436,9 +436,20 @@ body, a, button{
   margin: 0 auto;
   text-align: left;
 }
+     /* Quando membros-box for usada para avisos */
+#membros-box,
+#membros-box#avisos-container {}
+
+#avisos-container.membros-box{
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 25px;
+}
      
   }
 }
+
 
 
 
