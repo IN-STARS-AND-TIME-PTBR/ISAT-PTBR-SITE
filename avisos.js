@@ -1,29 +1,29 @@
 const container = document.getElementById("avisos-container");
 
-fetch("https://SEU-SERVIDOR.onrender.com/changelog")
+fetch("https://SEU-SERVIDOR.onrender.com/changelog.json")
   .then(res => res.json())
   .then(data => {
 
-    container.innerHTML = ""; // limpa "carregando"
+    container.innerHTML = "";
 
-    if (data.length === 0) {
+    if (!data || data.length === 0) {
       container.innerHTML = "<p>* Nenhum aviso ainda.</p>";
       return;
     }
 
-    data.reverse().forEach(aviso => {
+    data.forEach(aviso => {
 
       const card = document.createElement("div");
       card.classList.add("post-card");
 
       card.innerHTML = `
         <div class="post-header">
-          <img src="${aviso.foto}" class="post-avatar pixel-art">
-          <span class="post-name">${aviso.nome}</span>
+          <img src="assets/avatar-exemplo.png" class="post-avatar pixel-art">
+          <span class="post-name">${aviso.author}</span>
         </div>
 
         <div class="post-content">
-          ${aviso.mensagem}
+          ${aviso.content}
         </div>
       `;
 
