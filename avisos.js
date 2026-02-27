@@ -1,6 +1,6 @@
 const container = document.getElementById("avisos-container");
 
-fetch("https://SEU-SERVIDOR.onrender.com/changelog.json")
+fetch("https://isat-changelog-webhook.onrender.com/changelog")
   .then(res => res.json())
   .then(data => {
 
@@ -35,3 +35,4 @@ fetch("https://SEU-SERVIDOR.onrender.com/changelog.json")
     container.innerHTML = "<p>* Erro ao carregar avisos.</p>";
     console.error(err);
   });
+
