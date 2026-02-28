@@ -292,7 +292,8 @@ body, a, button{
 }
 
 /* RESPONSIVO */
-@media (max-width:850px){}
+@media (max-width:850px){
+
   .title-img{width:85%;}
   .pixel-avatar{width:120px;}
 
@@ -307,8 +308,11 @@ body, a, button{
   }
 
   .seta{
-    order:-1;
+    order:0;
     font-size:32px;
+  }
+
+}
 /* =============================
         PIXEL ART (ISAT)
 ============================= */
@@ -453,11 +457,12 @@ body, a, button{
   word-wrap: break-word;
 }
 .discord-float{
-  position:fixed;
-  bottom:30px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:10;
+  position: fixed;
+  left: 0px;
+  top: 60%;              /* desce mais */
+  transform: translateY(-50%);
+  z-index: 10;
+}
 }
 
 .discord-btn{
@@ -465,10 +470,33 @@ body, a, button{
   opacity:1;
   filter:none;
 }
-     
-  }
+#reset-overlay{
+  position: fixed;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: 9999;
 }
 
+#reset-overlay.active{
+  opacity: 1;
+}
+.discord-btn{
+  display: block;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.discord-btn:hover{
+  transform: scale(1.12) translateX(-6px);
+  filter: brightness(1.2);
+}
+
+.discord-btn:hover{
+  transform: scale(1.12) translateX(-6px);
+  filter: brightness(1.2);
+}
 
 
 
