@@ -292,7 +292,7 @@ body, a, button{
 }
 
 /* RESPONSIVO */
-@media (max-width:850px){
+@media (max-width:850px){}
   .title-img{width:85%;}
   .pixel-avatar{width:120px;}
 
@@ -360,38 +360,6 @@ body, a, button{
 /* =============================
         CARD DE AVISO (ISAT)
 ============================= */
-
-.post-card{
-  background: rgba(0,0,0,0.9);
-  border: 3px solid #fff;
-  padding: 20px;
-  margin: 25px auto;
-  max-width: 650px;
-  text-align: left;
-}
-
-.post-header{
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.post-avatar{
-  width: 55px;
-  height: 55px;
-  border: 2px solid #fff;
-  object-fit: cover;
-}
-
-.post-name{
-  font-size: 18px;
-  letter-spacing: 2px;
-}
-
-.post-content{
-  line-height: 1.5;
-}
      /* =============================
    MARKDOWN (ESTILO DISCORD)
 ============================= */
@@ -423,28 +391,66 @@ body, a, button{
   padding-left: 10px;
   opacity: 0.8;
 }
-     /* =============================
+/* =============================
         CONTAINER DE AVISOS
 ============================= */
 
-.avisos-box{
-  background: rgba(0,0,0,0.85);
-  border: 3px solid #fff;
-  padding: 30px;
-  width: 650px;
-  max-width: 95%;
-  margin: 0 auto;
-  text-align: left;
-}
-     /* Quando membros-box for usada para avisos */
-#membros-box,
-#membros-box#avisos-container {}
+#avisos-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 
-#avisos-container.membros-box{
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* =============================
+        CARD DE AVISO
+============================= */
+
+.post-card{
+  background: rgba(0,0,0,0.9);
+  border: 3px solid #fff;
+  padding: 20px;
+  text-align: left;
+
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  gap: 25px;
+}
+
+/* HEADER DO POST */
+.post-header{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.post-avatar{
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+
+  border: 2px solid #fff;
+  object-fit: cover;
+  border-radius: 50%; /* deixa redondo tipo Discord */
+}
+
+/* NOME */
+.post-name{
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* CONTEÚDO */
+.post-content{
+  line-height: 1.5;
+  word-wrap: break-word;
 }
      
   }
