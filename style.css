@@ -452,9 +452,23 @@ body, a, button{
   line-height: 1.5;
   word-wrap: break-word;
 }
+.discord-float{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+}
+
+.discord-btn{
+  display:block;
+  opacity:1;
+  filter:none;
+}
      
   }
 }
+
 
 
 
