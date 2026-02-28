@@ -1,38 +1,64 @@
-/* Estilização da Página de Texto */
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('assets/font/VCR_OSD_MONO.ttf'); /* Verifique se o caminho da fonte está correto */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: black; /* Fundo de segurança */
+    font-family: 'VCR OSD Mono', monospace;
+}
+
 .content-wrapper {
     position: relative;
     z-index: 10;
     max-width: 800px;
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: 60px 20px;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
 
+/* Título limpo, sem efeitos */
 .title-glitch {
-    font-size: 3rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px #ff0000, -2px -2px #0000ff; /* Efeito leve de glitch */
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    font-weight: normal;
 }
 
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Caixa de informações em P&B */
 .info-section {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.85); /* Fundo escuro para legibilidade */
     border: 2px solid white;
     padding: 30px;
-    margin-top: 40px;
-    border-radius: 8px;
+    border-radius: 0px; /* Quadrado como no jogo */
 }
 
 .description-box h2, .status-card h3 {
-    color: #ffd700; /* Destaque para os títulos internos */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.description-box p, .status-card li {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
 .warning-text {
-    font-style: italic;
-    color: #bbb;
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    border-top: 1px solid white;
+    padding-top: 15px;
 }
 
 ul {
@@ -40,21 +66,18 @@ ul {
     padding: 0;
 }
 
-ul li {
-    margin: 10px 0;
-}
-
-/* Replicando o design do botão de voltar */
+/* Botão de Voltar idêntico ao estilo do site */
 .back-button {
     display: inline-block;
-    margin-top: 40px;
-    padding: 15px 40px;
+    margin-top: 50px;
+    padding: 10px 30px;
     border: 2px solid white;
     background: transparent;
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 1.2rem;
+    transition: background 0.2s, color 0.2s;
 }
 
 .back-button:hover {
