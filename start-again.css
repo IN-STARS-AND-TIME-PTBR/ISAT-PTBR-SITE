@@ -84,3 +84,22 @@ ul {
     background: white;
     color: black;
 }
+/* BACKGROUND ANIMADO POR CIMA */
+.overlay-animated{
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background-image: url("assets/bg.png");
+    background-size: 300px 300px;
+    background-repeat: repeat;
+
+    opacity: 0.45;
+    animation: bgScroll 20s linear infinite;
+}
+
+@keyframes bgScroll {
+    from { background-position: 0 0; }
+    to   { background-position: 300px 300px; }
+}
