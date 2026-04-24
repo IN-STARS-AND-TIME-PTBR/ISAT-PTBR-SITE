@@ -1,0 +1,122 @@
+/* =========================
+   FANARTS PAGE (ISOLADO)
+========================= */
+
+.fanarts-page{
+  max-width: 1200px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.fanarts-page h2{
+  margin-bottom: 25px;
+  font-size: 32px;
+  letter-spacing: 4px;
+}
+
+/* CAIXA PRETA */
+.fanarts-page .fanarts-slider{
+  width: 100%;
+  overflow: hidden;
+
+  background: rgba(0,0,0,0.85);
+  border: 3px solid #fff;
+  padding: 30px;
+}
+
+/* TRILHA */
+.fanarts-page .fanarts-track{
+  display: flex;
+  gap: 25px;
+  width: max-content;
+
+  animation: scrollFanarts 25s linear infinite;
+}
+
+/* CARD */
+.fanarts-page .fanart-card{
+  width: 250px;
+  flex-shrink: 0;
+}
+
+/* IMAGEM */
+.fanarts-page .fanart-card img{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+
+  border: 2px solid #fff;
+}
+
+/* AUTOR */
+.fanarts-page .fanart-card p{
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ANIMAÇÃO */
+@keyframes scrollFanarts{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+}
+
+.lightbox img{
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+
+  border: 3px solid #fff;
+}
+
+.close-lightbox{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  width: 72px;
+  height: 72px;
+
+  cursor: pointer;
+  image-rendering: pixelated;
+
+  transition: transform 0.15s ease;
+}
+
+.close-lightbox:hover{
+  transform: scale(1.08);
+
+}
+
+/* clique nas fanarts */
+.fanart-card img{
+  cursor: pointer;
+}
+
+/* siffrin */
+.sifrin-miudo{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 90px;
+  z-index: 10;
+}

@@ -19,12 +19,13 @@
 
       <p class="welcome">* Boas vindas, Estrelinha!</p>
 
-      <nav class="buttons">
-        <a class="btn sound-link" href="membros.html">MEMBROS</a>
-        <a class="btn sound-link" href="sobre.html">SOBRE</a>
-        <a class="btn sound-link" href="start-again">START AGAIN</a>
-        <a class="btn sound-link" href="isat.html">ISAT</a>
-        <a class="btn sound-link" href="avisos.html">AVISOS</a>
+<div class="nav-container">
+  <button id="prevBtn" class="nav-arrow">&lt;</button>
+
+  <div id="button-slot" class="buttons"></div>
+
+  <button id="nextBtn" class="nav-arrow">&gt;</button>
+</div>
 
       </nav>
     </header>
@@ -80,6 +81,7 @@ window.addEventListener("hashchange", function(){
   }
 });
   <script src="script.js"></script>
+  <script src="home.js"></script>
   
 </body>
 </html>

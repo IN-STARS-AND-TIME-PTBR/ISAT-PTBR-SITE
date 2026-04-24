@@ -270,6 +270,12 @@ body, a, button{
   color:#ddd;
 }
 
+#mStatus{
+  font-size: 14px;
+  margin-top: 6px;
+  color: #999;
+}
+
 /* SETAS */
 .seta{
   font-size:38px;
@@ -497,9 +503,121 @@ body, a, button{
   transform: scale(1.12) translateX(-6px);
   filter: brightness(1.2);
 }
+/* SETAS DO MENU PRINCIPAL */
+.nav-arrow{
+  font-family: "VCR", monospace;
+  font-size: 38px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #ffffff;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  height: auto;
+  width: 40px;
+  padding-top: 6px;
+  text-shadow:
+    -1px -1px 0 #000000ab,
+     1px -1px 0 #000000ab,
+    -1px  1px 0 #000000ab,
+     1px  1px 0 #000000ab;
 
+  transition: transform 0.15s ease;
+}
+/* MENU COM SETAS */
+.nav-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 35px;
+}
+
+#button-slot{
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 20px;
+}
+.slide-out-left {
+  animation: slideOutLeft 0.25s forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.25s forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.25s forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.25s forwards;
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.icons img{
+  width:48px;
+  transition:0.2s;
+  image-rendering:pixelated;
+
+  filter:
+    drop-shadow(-1px 0 0 rgb(0, 0, 0))
+    drop-shadow(1px 0 0 rgb(0, 0, 0))
+    drop-shadow(0 -1px 0 rgb(0, 0, 0))
+    drop-shadow(0 1px 0 rgb(0, 0, 0));
+}
+
+.icons img:hover{
+  transform:scale(1.15);
+}
 
 
 
