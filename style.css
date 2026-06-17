@@ -1,0 +1,581 @@
+/* Importação e Configuração da Fonte VCR */
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('assets/vcr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset de Estilos Básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Scroll Suave */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'VCR OSD Mono', monospace;
+    overflow-x: hidden;
+    cursor: url('assets/cursor.png'), auto;
+    position: relative;
+}
+
+/* Customização da Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border: 2px solid #0d0d0d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #aaaaaa;
+}
+
+/* Camada Opositora com Textura Animada do Fundo */
+.overlay-animated {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("assets/bg.png");
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    opacity: .45;
+    z-index: 1;
+    animation: bgScroll 20s linear infinite;
+}
+
+@keyframes bgScroll {
+    from { background-position: 0 0; }
+    to { background-position: 300px 300px; }
+}
+
+/* Papel de parede estático atrás de tudo */
+.fundo-estatico {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url('assets/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1.0;
+    z-index: 0;
+}
+
+/* Tela de Carregamento (Loader) */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    border-top: 3px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ================= SEÇÃO HOME (CONTEÚDO LIVRE) ================= */
+.main-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 100vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Animação Inicial de Entrada */
+.fade-in-up {
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo Superior */
+.game-header {
+    text-align: center;
+    width: 100%;
+}
+.game-logo {
+    max-width: 370px;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;        /* Transforma a imagem em bloco */
+    margin-left: auto;     /* Empurra o espaço da esquerda */
+    margin-right: auto;    /* Empurra o espaço da direita e centraliza */
+}
+
+/* CONTAINER TOTALMENTE REMOVIDO: Elementos soltos e centralizados na página */
+.banner-wrapper {
+    width: 50%;
+    max-width: 520px;
+    border: 3px solid #ffffff;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+}
+.main-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.game-title {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.game-description {
+    max-width: 720px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center; /* CORRIGIDO: O texto fica todo centralizado como um bloco de poema */
+    color: #dedede;
+    letter-spacing: 0.5px;
+    margin-bottom: 0px;
+      /* CORRIGIDO: Cria um efeito de brilho/neon branco ao redor de todos os textos */
+    text-shadow: 0px 0px 8px #7b7b7b; 
+}
+
+/* Menu de Navegação Inferior */
+.navigation-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.nav-arrow {
+    font-size: 1.8rem;
+    color: #ffffff;
+    user-select: none;
+}
+
+/* Sistema de Botões */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    border:2px solid #fff;
+
+    width:145px;
+    height:46px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:0;
+
+    letter-spacing:2px;
+
+    font-size:1rem;
+
+    white-space:nowrap;
+
+    transition:.2s;
+
+    font-family:'VCR OSD Mono', monospace;
+
+}
+
+/* Efeito ativado APENAS no Hover ou via JS */
+.btn:hover {
+    transform: translateY(-3px) scale(1.08);
+    filter: brightness(1.3);
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #aaaaaa;
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 0 5px #ffffff inset;
+}
+
+.btn.active-section {
+    transform: translateY(-3px) scale(1.08);
+    filter: brightness(1.3);
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #aaaaaa;
+}
+
+/* Decorações Fixas Adicionais */
+.top-left-icon {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 3;
+    width: 32px;
+    opacity: 0.8;
+}
+.top-left-icon img {
+    width: 100%;
+    image-rendering: pixelated;
+}
+
+/* Widget Flutuante do Discord */
+.discord-widget {
+    position: fixed;
+    left: 20px;
+    bottom: 50%;
+    transform: translateY(50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.widget-avatar {
+    width: 300px;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+.widget-balloon {
+    background: #ffffff;
+    color: #000000;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    box-shadow: 3px 3px 0px #000000;
+}
+
+/* Siffrin Miúdo */
+.sifrin-miudo {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    width: 90px;
+    image-rendering: pixelated;
+    z-index: 4;
+    animation: sifrinPulse 1.7s ease-in-out infinite;
+}
+
+@keyframes sifrinPulse {
+    0% { transform: translateY(0); filter: brightness(1); }
+    45% { transform: translateY(-2px); filter: brightness(1.4); }
+    100% { transform: translateY(0); filter: brightness(1); }
+}
+
+/* ================= SEÇÃO NOVIDADES (EMBAIXO CORRIGIDO) ================= */
+.novidades-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 100vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    
+    /* CORRIGIDO: Cria um efeito de brilho/neon branco ao redor de todos os textos */
+    text-shadow: 0px 0px 8px #7b7b7b; 
+    
+}
+
+.section-title {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Card reestruturado: Alinhamento vertical (Imagem em cima, Texto embaixo) */
+.devlog-card {
+    display: flex;
+    flex-direction: column; /* Força a ir para baixo */
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 520px; /* Alinha com a largura padrão do banner da Home */
+    width: 100%;
+}
+
+.devlog-thumb {
+    position: relative;
+    width: 100%; /* Ocupa a largura total do bloco */
+    border: 3px solid #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+}
+
+.devlog-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.devlog-tag {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #000000;
+    z-index: 2;
+}
+
+/* Informações do Devlog (Embaixo da imagem) */
+.devlog-info {
+    width: 100%;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.devlog-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: baseline;
+}
+
+.devlog-date {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    margin-left: 15px;
+}
+
+.devlog-info p {
+    color: #dedede;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+.end-marker {
+    font-size: 1.2rem;
+    margin: 40px 0 20px 0;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* Rodapé de Redes Sociais */
+.social-footer {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-icon img {
+    width: 150%;
+    height: auto;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.4);
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 768px) {
+    .main-container, .novidades-container {
+        padding: 40px 15px;
+    }
+    .game-description {
+        font-size: 0.85rem;
+        text-align: left;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .discord-widget {
+        bottom: 20px;
+        left: 15px;
+        transform: none;
+    }
+    .widget-balloon {
+        display: none; 
+    }
+    .sifrin-miudo {
+        width: 65px;
+        right: 10px;
+        bottom: 10px;
+    }
+    .devlog-thumb {
+        border-radius: 16px;
+    }
+}
+/* MENU COM SETAS */
+.nav-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin:30px 0 35px;
+}
+#button-slot{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+
+    width:640px;
+    min-height:60px;
+
+    overflow:hidden;
+}
+
+/* SETAS */
+.nav-arrow{
+    font-family:"VCR OSD Mono", monospace;
+    font-size:38px;
+    cursor:pointer;
+    background:transparent;
+    border:none;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:40px;
+    padding-top:6px;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+
+    transition:transform .15s ease;
+}
+
+.nav-arrow:hover{
+    transform:scale(1.15);
+}
+
+/* ANIMAÇÕES */
+.slide-out-left{
+    animation:slideOutLeft .25s forwards;
+}
+
+.slide-in-right{
+    animation:slideInRight .25s forwards;
+}
+
+.slide-out-right{
+    animation:slideOutRight .25s forwards;
+}
+
+.slide-in-left{
+    animation:slideInLeft .25s forwards;
+}
+
+@keyframes slideOutLeft{
+    from{
+        opacity:1;
+        transform:translateX(0);
+    }
+    to{
+        opacity:0;
+        transform:translateX(-40px);
+    }
+}
+
+@keyframes slideInRight{
+    from{
+        opacity:0;
+        transform:translateX(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideOutRight{
+    from{
+        opacity:1;
+        transform:translateX(0);
+    }
+    to{
+        opacity:0;
+        transform:translateX(40px);
+    }
+}
+
+@keyframes slideInLeft{
+    from{
+        opacity:0;
+        transform:translateX(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}

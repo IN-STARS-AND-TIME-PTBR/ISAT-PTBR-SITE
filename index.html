@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Stars and Time pt-br</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./style.css?v=1.7">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="fundo-estatico"></div>
+    <div class="overlay-animated"></div>
+
+    <a href="https://discord.gg/seu-link" target="_blank" class="discord-widget" title="Entre no nosso Discord">
+        <img src="assets/discord-button.png" alt="Membro" class="widget-avatar">
+    </a>
+
+    <div class="top-left-icon">
+        <img src="assets/favicon.png" alt="Icon">
+    </div>
+
+    <img src="assets/sifrin-miudo.png" alt="Siffrin Miúdo" class="sifrin-miudo">
+
+    <main id="secao-home" class="main-container fade-in-up">
+        
+        <header class="game-header">
+            <img src="assets/logo.png" alt="In Stars and Time pt-br" class="game-logo">
+        </header>
+
+        <div class="banner-wrapper">
+            <img src="assets/banner2.jpg" alt="Siffrin ISAT pt-br" class="main-banner">
+        </div>
+
+        <h2 class="game-title">ISAT</h2>
+
+        <article class="game-description">
+            <p>
+                In Stars and Time é um RPG de aventura com mecânica de loop temporal, desenvolvido pela insertdisc5 e publicado pela Armor Games Studios. Lançado em 20 de novembro de 2023. Após um encontro desconfortavelmente próximo com uma armadilha, o líder do grupo, Siffrin, descobre que eles estão presos em um loop temporal, capazes de recomeçar o dia sem que ninguém perceba. Mas o que parecia um truque útil para garantir a vitória rapidamente começa a pegar sobre Siffrin, à medida que ele vivencia o loop repetidamente, sem fim à vista. Relutante em se abrir com seus amigos e companheiros, e com o peso literal do mundo sobre seus ombros, será que Siffrin conseguirá encontrar uma maneira de quebrar o loop antes que ele o quebre?.
+            </p>
+        </article>
+<div class="nav-container">
+
+    <button id="prevBtn" class="nav-arrow">&lt;</button>
+
+    <div id="button-slot"></div>
+
+    <button id="nextBtn" class="nav-arrow">&gt;</button>
+
+</div>
+</div>
+
+<script>
+    const track = document.getElementById("menu-track");
+
+    function deslizarParaDireita() {
+        // Desliza para o segundo painel (Links Extras)
+        track.style.transform = "translateX(-50%)";
+    }
+
+    function deslizarParaEsquerda() {
+        // Volta para o primeiro painel (Menu Principal)
+        track.style.transform = "translateX(0%)";
+    }
+</script>
+
+<style>
+    /* Estilo das duas setas com contorno preto grosso e pixelizado */
+    .nav-arrow-btn {
+        background: none;
+        border: none;
+        color: #ffffff; /* Interior branco */
+        font-size: 1.8rem;
+        font-family: 'VCR OSD Mono', monospace;
+        cursor: pointer;
+        padding: 10px;
+        transition: transform 0.15s ease;
+        user-select: none;
+        
+        /* Contorno total de 2px cobrindo todos os cantos e diagonais */
+        text-shadow: 
+            -2px -2px 0 #000000,  
+             2px -2px 0 #000000,
+            -2px  2px 0 #000000,
+             2px  2px 0 #000000,
+            -2px  0px 0 #000000,
+             2px  0px 0 #000000,
+             0px -2px 0 #000000,
+             0px  2px 0 #000000;
+    }
+
+    .nav-arrow-btn:hover {
+        transform: scale(1.15);
+    }
+
+    /* Caixa limitadora do menu invisível */
+    .menu-slider-wrapper {
+        width: 480px; /* Mantém o tamanho fixo de 3 botões na tela */
+        overflow: hidden;
+    }
+
+    /* Linha que segura os dois painéis lado a lado */
+    .menu-slider-track {
+        display: flex;
+        width: 200%; 
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+    }
+
+    /* Cada grupo de botões ocupa exatamente metade do track */
+    .menu-painel {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        width: 50%;
+    }
+    
+    .game-menu .btn, .menu-painel .btn {
+        display: inline-block;
+        text-align: center;
+        min-width: 140px;
+        white-space: nowrap; /* Impede terminantemente a quebra de linha do texto */
+        box-sizing: border-box;
+    }
+</style>
+
+            </nav>
+        </div>
+
+        <section id="secao-novidades" class="novidades-container" style="margin-top: 50px;">
+            <h2 class="section-title">NOVIDADES</h2>
+            
+            <div class="devlog-card">
+                <div class="devlog-thumb">
+                    <span class="devlog-tag"></span>
+                    <img src="assets/banner.png" alt="Devlog Thumbnail">
+                </div>
+                <div class="devlog-info">
+                    <h3>Felyzito <span class="devlog-date">01/01/2026</span></h3>
+                    <p>DEV LOG EM PRODUÇÃO Estamos preparando um novo Dev Log para compartilhar tudo o que vem sendo desenvolvido! Nele, mostraremos a trajetoria do projeto jutamente com os bastidores do projeto.
+Ainda Em breve, o Dev Log será publicado com todos os detalhes.
+Fiquem de olho!</p>
+                </div>
+            </div>
+
+            <div class="end-marker">#ISAT PT-BR</div>
+
+            <footer class="social-footer">
+                <a href="https://github.com" target="_blank" class="social-icon" title="GitHub">
+                    <img src="assets/gh.png" alt="GitHub">
+                </a>
+                <a href="#" class="social-icon" title="Modding">
+                    <img src="assets/x.png" alt="Modding">
+                </a>
+                <a href="https://discord.gg" target="_blank" class="social-icon" title="Discord">
+                    <img src="assets/dc.png" alt="Discord">
+                </a>
+                <a href="https://youtube.com" target="_blank" class="social-icon" title="YouTube">
+                    <img src="assets/yt.png" alt="YouTube">
+                </a>
+            </footer>
+        </section>
+        
+
+    </main> <audio id="bg-music" src="assets/music.mp3" loop></audio>
+
+    <script>
+        function alternarMenu() {
+            const menuExtras = document.getElementById("menu-links-extras");
+            const seta = document.getElementById("btn-seta-menu");
+
+            if (menuExtras.style.display === "none" || menuExtras.style.display === "") {
+                menuExtras.style.display = "flex";
+                seta.textContent = "▶";
+            } else {
+                menuExtras.style.display = "none";
+                seta.textContent = "◀";
+            }
+        }
+    </script>
+
+    <style>
+        .nav-arrow-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-family: 'VCR OSD Mono', monospace;
+            cursor: pointer;
+            padding: 10px;
+            transition: transform 0.15s ease;
+            
+            text-shadow: 
+                -2px -2px 0 #000000,  
+                 2px -2px 0 #000000,
+                -2px  2px 0 #000000,
+                 2px  2px 0 #000000;
+        }
+
+        .nav-arrow-btn:hover {
+            transform: scale(1.15);
+        }
+
+        @keyframes fadeInMenu {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .game-menu .btn {
+            display: inline-block;
+            text-align: center;
+            min-width: 140px;
+        }
+    </style>
+
+    <script src="./script.js"></script>
+</body>
+</html>

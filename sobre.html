@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto - ISAT pt-br</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./style.css?v=1.7">
+    <style>
+        /* Estilização da Linha do Tempo baseada no seu print original */
+        .timeline-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 50px auto 60px auto;
+            padding: 20px 0;
+        }
+
+        /* ANIMAÇÃO DA BARRA HORIZONTAL: Cresce da esquerda para a direita */
+        .timeline-bar {
+            position: absolute;
+            top: 25px;
+            left: 0;
+            height: 4px;
+            background-color: #ffffff;
+            z-index: 1;
+            width: 0%; /* Começa zerada para a animação */
+            animation: expandirLinha 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 0.2s;
+        }
+
+        .timeline-events {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* ANIMAÇÃO DOS ITENS: Efeito pop controlado */
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 18%;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: aparecerNo 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+        }
+
+        /* Atrasos em cascata sincronizados com o crescimento da barra */
+        .node-1 { animation-delay: 0.4s; }
+        .node-2 { animation-delay: 0.6s; }
+        .node-3 { animation-delay: 0.8s; }
+        .node-4 { animation-delay: 1.0s; }
+        .node-5 { animation-delay: 1.2s; }
+
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .timeline-year {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .timeline-text {
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: #dedede;
+            letter-spacing: 0.5px;
+        }
+
+        /* Container do Trailer do YouTube */
+        .trailer-box {
+            width: 100%;
+            max-width: 520px;
+            border: 3px solid #ffffff;
+            overflow: hidden;
+            display: flex;
+            aspect-ratio: 16 / 9;
+            margin-top: 15px;
+        }
+
+        .trailer-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .back-footer {
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .no-glow {
+            text-shadow: none !important;
+        }
+
+        /* ==================== KEYFRAMES ==================== */
+        @keyframes expandirLinha {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        @keyframes aparecerNo {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fundo-estatico"></div>
+    <div class="overlay-animated"></div>
+
+    <div class="top-left-icon">
+        <a href="index.html"><img src="assets/favicon.png" alt="Voltar para o Início"></a>
+    </div>
+
+    <main class="main-container fade-in-up no-glow">
+        
+        <h2 class="section-title no-glow">SOBRE O PROJETO</h2>
+
+        <article class="game-description no-glow" style="margin-bottom: 40px;">
+            <p>
+                O projeto de tradução de In Stars And Time nasceu do desejo de tornar a experiência do jogo acessível para mais pessoas da comunidade brasileira. O foco é entregar uma tradução fiel, cuidadosa e respeitosa com o tom emocional da obra original.
+            </p>
+        </article>
+
+        <h2 class="game-title no-glow" style="font-size: 1.4rem;">LINHA DO TEMPO</h2>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-bar"></div>
+            <div class="timeline-events">
+                
+                <div class="timeline-item node-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2023</div>
+                    <p class="timeline-text">Surgimento da ideia de traduzir In Stars And Time.</p>
+                </div>
+
+                <div class="timeline-item node-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2024/02</div>
+                    <p class="timeline-text">Primeiras tentativas de tradução e organização do projeto.</p>
+                </div>
+
+                <div class="timeline-item node-3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2024/11</div>
+                    <p class="timeline-text">Criação do fórum no Discord para discussões e planejamento.</p>
+                </div>
+
+                <div class="timeline-item node-4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2025/09</div>
+                    <p class="timeline-text">Emissão oficial do servidor no Discord.</p>
+                </div>
+
+                <div class="timeline-item node-5">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2025/09/27</div>
+                    <p class="timeline-text">Postagem do trailer do projeto de tradução.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <h2 class="game-title no-glow" style="font-size: 1.4rem;">TRAILER</h2>
+        
+        <div class="trailer-box">
+            <iframe src="https://www.youtube.com/embed/f3c6306a-e7b1-4d16-bbe1-ab86db938ab3" title="In Stars And Time PT-BR - Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="back-footer">
+            <a href="index.html" class="btn">VOLTAR</a>
+        </div>
+
+    </main>
+
+</body>
+</html>
