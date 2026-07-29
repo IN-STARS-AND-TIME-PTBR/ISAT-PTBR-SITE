@@ -52,12 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
             { texto: "SOBRE", href: "sobre.html" },
             { texto: "MEMBROS", href: "membros.html" },
             { texto: "FAN ARTS", href: "fanarts.html" },
-            { texto: "PARCERIAS", href: "parcerias.html" }
+            { texto: "PARCERIAS", href: "parcerias.html" } 
         ],
 
         [
             { texto: "PLANILHA", href: "https://discord.gg/seu-link", target: "_blank" },
-            { texto: "WISHLIST", href: "https://github.com/seu-link", target: "_blank" }
+            { texto: "WISHLIST", href: "https://github.com/seu-link", target: "_blank" },
+            { texto: "WEB COMIC", href: "comic.html" } 
         ]
 
     ];

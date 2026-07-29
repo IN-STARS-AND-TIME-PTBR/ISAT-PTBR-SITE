@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WEB COMIC - ISAT PT-BR</title>
+
+<link rel="shortcut icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.comic-grid{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:35px;
+
+margin-top:40px;
+
+}
+
+.comic-card{
+
+width:280px;
+
+border:3px solid rgba(0, 0, 0, 0.345);
+
+background:rgba(0,0,0,.65);
+
+overflow:hidden;
+
+transition:.2s;
+
+}
+
+.comic-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 0 20px white;
+
+}
+
+.comic-card img{
+
+width:100%;
+
+display:block;
+
+}
+
+.comic-info{
+
+padding:20px;
+
+margin:20px auto 0 auto;
+
+text-align:center;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+.comic-info h3{
+
+margin-bottom:10px;
+
+}
+
+.reader{
+
+margin-top:60px;
+
+display:none;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.reader img{
+
+width:100%;
+max-width:800px;
+
+border:3px solid white;
+
+}
+
+.reader-controls{
+
+display:flex;
+
+gap:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="fundo-estatico"></div>
+<div class="overlay-animated"></div>
+
+<div class="top-left-icon">
+<a href="index.html">
+<img src="assets/favicon.png">
+</a>
+</div>
+
+<main class="main-container fade-in-up">
+
+<h1 class="section-title">QUADRINHOS</h1>
+
+<p class="game-description">
+Traduções das comics de start again a prologue 
+</p>
+
+<div class="comic-grid">
+
+<div class="comic-card">
+
+<img src="assets/capa.png">
+
+<div class="comic-info">
+
+<h3>CAP 1</h3>
+
+<p>5 páginas</p>
+
+<br>
+
+<button class="btn" onclick="abrirComic()">LER</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="reader" id="reader">
+
+<img id="comicImage">
+
+<div class="reader-controls">
+
+<button class="btn" onclick="anterior()">◀ ANTERIOR</button>
+
+<button class="btn" onclick="proxima()">PRÓXIMA ▶</button>
+
+</div>
+
+</div>
+
+</main>
+
+<script>
+
+const paginas=[
+
+"assets/fanarts/1pg1.png",
+"assets/fanarts/1pg2.png",
+"assets/fanarts/1pg3.png",
+"assets/fanarts/1pg4.png",
+"assets/fanarts/1pg5.png",
+
+]
+
+let paginaAtual=0
+
+function abrirComic(){
+
+document.getElementById("reader").style.display="flex"
+
+paginaAtual=0
+
+mostrarPagina()
+
+window.scrollTo({
+
+top:document.getElementById("reader").offsetTop,
+
+behavior:"smooth"
+
+})
+
+}
+
+function mostrarPagina(){
+
+document.getElementById("comicImage").src=paginas[paginaAtual]
+
+}
+
+function proxima(){
+
+if(paginaAtual<paginas.length-1){
+
+paginaAtual++
+
+mostrarPagina()
+
+}
+
+}
+
+function anterior(){
+
+if(paginaAtual>0){
+
+paginaAtual--
+
+mostrarPagina()
+
+}
+
+}
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key=="ArrowRight")proxima()
+
+if(e.key=="ArrowLeft")anterior()
+
+})
+
+</script>
+
+</body>
+</html>

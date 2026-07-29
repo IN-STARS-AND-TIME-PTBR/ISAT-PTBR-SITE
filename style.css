@@ -579,3 +579,24 @@ body {
         transform:translateX(0);
     }
 }
+.btn{
+
+background:#000;
+color:#fff;
+border:2px solid #fff;
+
+padding:10px 25px;
+
+cursor:pointer;
+
+font-size:16px;
+
+transition:.2s;
+
+}
+
+.btn:hover{
+
+background:#222;
+
+}
