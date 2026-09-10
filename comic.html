@@ -128,6 +128,7 @@ Traduções das comics de start again a prologue
 
 <div class="comic-grid">
 
+<!-- CAPÍTULO 1 -->
 <div class="comic-card">
 
 <img src="assets/capa.png">
@@ -140,7 +141,45 @@ Traduções das comics de start again a prologue
 
 <br>
 
-<button class="btn" onclick="abrirComic()">LER</button>
+<button class="btn" onclick="abrirComic('cap1')">LER</button>
+
+</div>
+
+</div>
+
+<!-- CAPÍTULO 2 -->
+<div class="comic-card">
+
+<img src="assets/capa2.png">
+
+<div class="comic-info">
+
+<h3>CAP 2</h3>
+
+<p>7 páginas</p>
+
+<br>
+
+<button class="btn" onclick="abrirComic('cap2')">LER</button>
+
+</div>
+
+</div>
+
+<!-- CAPÍTULO 3 -->
+<div class="comic-card">
+
+<img src="assets/capa3.png">
+
+<div class="comic-info">
+
+<h3>CAP 3</h3>
+
+<p>7 páginas</p>
+
+<br>
+
+<button class="btn" onclick="abrirComic('cap3')">LER</button>
 
 </div>
 
@@ -166,73 +205,73 @@ Traduções das comics de start again a prologue
 
 <script>
 
-const paginas=[
+const capitulos = {
+    cap1: [
+        "assets/fanarts/1pg1.png",
+        "assets/fanarts/1pg2.png",
+        "assets/fanarts/1pg3.png",
+        "assets/fanarts/1pg4.png",
+        "assets/fanarts/1pg5.png"
+    ],
+    cap2: [
+        "assets/fanarts/2pg1.png",
+        "assets/fanarts/2pg2.png",
+        "assets/fanarts/2pg3.png",
+        "assets/fanarts/2pg4.png",
+        "assets/fanarts/2pg5.png",
+        "assets/fanarts/2pg6.webp",
+        "assets/fanarts/2pg7.webp"
+    ],
+    cap3: [
+        "assets/fanarts/3pg1.png",
+        "assets/fanarts/3pg2.png",
+        "assets/fanarts/3pg3.png",
+        "assets/fanarts/3pg4.png",
+        "assets/fanarts/3pg5.png",
+        "assets/fanarts/3pg6.png",
+        "assets/fanarts/3pg7.png"
+    ]
+};
 
-"assets/fanarts/1pg1.png",
-"assets/fanarts/1pg2.png",
-"assets/fanarts/1pg3.png",
-"assets/fanarts/1pg4.png",
-"assets/fanarts/1pg5.png",
+let paginasAtuais = [];
+let paginaAtual = 0;
 
-]
+function abrirComic(capId){
+    paginasAtuais = capitulos[capId];
+    document.getElementById("reader").style.display = "flex";
+    paginaAtual = 0;
+    mostrarPagina();
 
-let paginaAtual=0
-
-function abrirComic(){
-
-document.getElementById("reader").style.display="flex"
-
-paginaAtual=0
-
-mostrarPagina()
-
-window.scrollTo({
-
-top:document.getElementById("reader").offsetTop,
-
-behavior:"smooth"
-
-})
-
+    window.scrollTo({
+        top: document.getElementById("reader").offsetTop,
+        behavior: "smooth"
+    });
 }
 
 function mostrarPagina(){
-
-document.getElementById("comicImage").src=paginas[paginaAtual]
-
+    document.getElementById("comicImage").src = paginasAtuais[paginaAtual];
 }
 
 function proxima(){
-
-if(paginaAtual<paginas.length-1){
-
-paginaAtual++
-
-mostrarPagina()
-
-}
-
+    if(paginaAtual < paginasAtuais.length - 1){
+        paginaAtual++;
+        mostrarPagina();
+    }
 }
 
 function anterior(){
-
-if(paginaAtual>0){
-
-paginaAtual--
-
-mostrarPagina()
-
-}
-
+    if(paginaAtual > 0){
+        paginaAtual--;
+        mostrarPagina();
+    }
 }
 
 document.addEventListener("keydown",(e)=>{
-
-if(e.key=="ArrowRight")proxima()
-
-if(e.key=="ArrowLeft")anterior()
-
-})
+    if(document.getElementById("reader").style.display === "flex"){
+        if(e.key == "ArrowRight") proxima();
+        if(e.key == "ArrowLeft") anterior();
+    }
+});
 
 </script>
 
